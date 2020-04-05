@@ -44,7 +44,9 @@ App = {
     event.preventDefault();
 
     var amount = parseInt($('#TTTransferAmount').val());
+    console.log(`The chosen amount for transfer is ${amount} wei.`);
     var toAddress = $('#TTTransferAddress').val();
+    console.log(`The amount will be transfered to address ${toAddress}`);
 
     console.log('Transfer ' + amount + ' TT to ' + toAddress);
 
@@ -56,6 +58,7 @@ App = {
       }
 
       var account = accounts[0];
+      console.log(`Check#1 first account set to: ${account}`);
 
       App.contracts.TutorialToken.deployed().then(function(instance) {
         tutorialTokenInstance = instance;
